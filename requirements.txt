@@ -1,0 +1,7 @@
+Pillow
+dearpygui
+requests
+Jinja2
+bs4
+lxml
+pyinstaller

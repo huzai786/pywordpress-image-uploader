@@ -1,0 +1,51 @@
+{% if render_style %}
+<style>
+    img {
+        width: 700px;    
+        text-align: center;
+    }
+    /* Basic button styling */
+    .buttondownload {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #007bff;
+        border: 2px solid #007bff;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    }
+
+    /* Button hover effect */
+    .buttondownload:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+    /* Button active effect */
+    .buttondownload:active {
+        background-color: #003366;
+        border-color: #003366;
+    }
+
+    /* Button disabled state */
+    .buttondownload:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+</style>
+{% endif %}
+<div class="container">
+    {% for image in images %}
+    <div style="text-align: center;">
+        <img src="{{ image.1 }}" class="img-fluid" alt="{{ image.0 }}">
+        <a href="{{ image.1 }}" style="text-decoration: none;" class="buttondownload" download>Download</a>
+    </div>
+    {% endfor %}
+</div>
